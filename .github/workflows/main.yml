@@ -25,14 +25,15 @@ jobs:
         node-version: 16
 
     - name: Install dependencies
-      run: npm install
+      
+      run: cd bulldog-investimentos npm install
 
     - name: Run tests
-      run: npm run test:headless
+      run: cd bulldog-investimentos npm run test:headless
 
     - name: Build
-      run: npm run build:prod
+      run: cd bulldog-investimentos npm run build:prod
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/bulldog-investimentos s3://bulldog-investimentos
+      run: aws s3 sync cd bulldog-investimentos/dist/bulldog-investimentos s3://bulldog-investimentos
