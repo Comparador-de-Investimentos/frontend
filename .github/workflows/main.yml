@@ -7,7 +7,7 @@ on:
     
 defaults:
   run:
-    working-directory: cd ./bulldog-investimentos
+    working-directory: cd bulldog-investimentos
 
 jobs:
   deploy:
@@ -39,4 +39,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/bulldog-investimentos s3://bulldog-investimentos
+      run: aws s3 sync /dist/bulldog-investimentos s3://bulldog-investimentos
